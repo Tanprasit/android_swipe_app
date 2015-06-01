@@ -1,4 +1,4 @@
-package com.example.gino.tabswithswipe.Activities;
+package com.example.gino.tabswithswipe.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

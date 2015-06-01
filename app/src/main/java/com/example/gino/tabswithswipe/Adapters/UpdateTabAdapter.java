@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.example.gino.tabswithswipe.Fragments.CommunityFragment;
-import com.example.gino.tabswithswipe.Activities.PublicProfileFragment;
+import com.example.gino.tabswithswipe.Fragments.PublicProfileFragment;
 
 public class UpdateTabAdapter extends FragmentStatePagerAdapter {
 
