@@ -114,13 +114,6 @@ public class MainActivity extends AppCompatActivity implements android.support.v
         } catch (Exception e) {
             Log.d("TAG", "Error: " + e);
         }
-        this.activity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-
-            }
-        });
-
     }
 
     @Override
