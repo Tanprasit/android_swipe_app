@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Community view fragment"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:id="@+id/contacts"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        tools:context="com.example.gino.tabs.buttontabs"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/linearLayout">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rdb1"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
+                android:background="@android:color/white"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Contacts + Chat"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:onClick="onClick"
+                android:checked="false" />
+            <RadioButton
+                android:id="@+id/rdb2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.33"
+                android:button="@null"
+                android:gravity="center"
+                android:text="My Updatrs"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:onClick="onClick"
+                android:background="@android:color/white"
+                android:checked="false" />
+            <RadioButton
+                android:id="@+id/rdb3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.34"
+                android:background="@android:color/white"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Updatr Feed"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:onClick="onClick" />
+            <RadioButton
+                android:id="@+id/rdb4"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.34"
+                android:background="@android:color/white"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Settings"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:onClick="onClick" />
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
