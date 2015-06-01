@@ -1,6 +1,5 @@
 package com.example.gino.tabswithswipe.Activities;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements android.support.v
     private UpdateTabAdapter mUpdateTabAdapter;
     private Button contactButton;
     private Button updatesButton;
-    private Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements android.support.v
         mUpdateTabAdapter = new UpdateTabAdapter(getSupportFragmentManager());
 
         // Defaults to contact adapter
-        this.configureTabsForActivity(mContactTabAdapter);
+        this.setupFragmentsForActivity(mContactTabAdapter);
 
         // Setup tab values for top navigation tabs
         this.setupTabValues();
@@ -53,10 +52,11 @@ public class MainActivity extends AppCompatActivity implements android.support.v
     }
 
     // This will default to friends fragment first.
-    private void configureTabsForActivity(FragmentStatePagerAdapter fragmentStatePagerAdapter) {
-
+    private void setupFragmentsForActivity(FragmentStatePagerAdapter fragmentStatePagerAdapter) {
         // Find pager from xml config.
-        mTabsViewPager = (ViewPager) findViewById(R.id.tabs_pager_1);
+        if (null == mTabsViewPager) {
+            mTabsViewPager = (ViewPager) findViewById(R.id.tabs_pager_1);
+        }
 
         // This sets the listener to the pager. In other words it listens for the
         // user's input. For this instance it is a swipe.
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements android.support.v
             // Set current fragment from stored fragment list in TabsAdapter.
             @Override
             public void onPageSelected(int position) {
-                mTabsViewPager.setCurrentItem(position);
+                actionBar.setSelectedNavigationItem(position);
             }
 
             // Set current fragment from stored fragment list in TabsAdapter by user swiping.
@@ -94,9 +94,8 @@ public class MainActivity extends AppCompatActivity implements android.support.v
 
     public void onContactClick(View view) {
         try {
-            this.configureTabsForActivity(mContactTabAdapter);
-            System.out.println("set contact adapter");
-
+            this.setupFragmentsForActivity(mContactTabAdapter);
+            actionBar.setSelectedNavigationItem(0);
             contactButton.setBackgroundColor(Color.parseColor("#cc0000"));
             updatesButton.setBackgroundColor(Color.parseColor("#00cc00"));
         } catch (Exception e) {
@@ -106,9 +105,8 @@ public class MainActivity extends AppCompatActivity implements android.support.v
 
     public void onUpdatesClick(View view) {
         try {
-            this.configureTabsForActivity(mUpdateTabAdapter);
-            System.out.println("set update adapter");
-
+            this.setupFragmentsForActivity(mUpdateTabAdapter);
+            actionBar.setSelectedNavigationItem(0);
             contactButton.setBackgroundColor(Color.parseColor("#00cc00"));
             updatesButton.setBackgroundColor(Color.parseColor("#cc0000"));
         } catch (Exception e) {
@@ -117,20 +115,17 @@ public class MainActivity extends AppCompatActivity implements android.support.v
     }
 
     @Override
-    public void onTabReselected(Tab arg0, FragmentTransaction arg1) {
-        // TODO Auto-generated method stub
+    public void onTabReselected(Tab selectedTab, FragmentTransaction arg1) {
 
     }
 
     @Override
-    public void onTabSelected(Tab selectedtab, FragmentTransaction arg1) {
-        // TODO Auto-generated method stub
-        mTabsViewPager.setCurrentItem(selectedtab.getPosition()); //update tab position on tap
+    public void onTabSelected(Tab selectedTab, FragmentTransaction arg1) {
+        mTabsViewPager.setCurrentItem(selectedTab.getPosition());
     }
 
     @Override
-    public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
-        // TODO Auto-generated method stub
-
+    public void onTabUnselected(Tab selectedTab, FragmentTransaction arg1) {
+        mTabsViewPager.setCurrentItem(selectedTab.getPosition());
     }
 }
