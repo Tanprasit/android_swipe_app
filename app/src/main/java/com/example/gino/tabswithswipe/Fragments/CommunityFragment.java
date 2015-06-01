@@ -10,6 +10,7 @@ import com.example.gino.tabswithswipe.R;
 
 
 public class CommunityFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
