@@ -1,4 +1,4 @@
-package com.example.gino.tabswithswipe;
+package com.example.gino.tabswithswipe.Activities;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -13,6 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.gino.tabswithswipe.Adapters.ContactTabAdapter;
+import com.example.gino.tabswithswipe.Adapters.UpdateTabAdapter;
+import com.example.gino.tabswithswipe.R;
 
 public class MainActivity extends AppCompatActivity implements android.support.v7.app.ActionBar.TabListener {
     private ActionBar actionBar;

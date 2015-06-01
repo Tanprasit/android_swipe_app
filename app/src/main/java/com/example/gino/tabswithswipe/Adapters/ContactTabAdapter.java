@@ -1,8 +1,11 @@
-package com.example.gino.tabswithswipe;
+package com.example.gino.tabswithswipe.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import com.example.gino.tabswithswipe.Fragments.CommunityFragment;
+import com.example.gino.tabswithswipe.Fragments.FriendsFragment;
 
 public class ContactTabAdapter extends FragmentStatePagerAdapter {
 

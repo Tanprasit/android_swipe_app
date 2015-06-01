@@ -1,14 +1,16 @@
-package com.example.gino.tabswithswipe;
+package com.example.gino.tabswithswipe.Activities;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
+
+import com.example.gino.tabswithswipe.Fragments.FriendsFragment;
+import com.example.gino.tabswithswipe.R;
 
 
 public class TheRealMainActivity extends AppCompatActivity implements android.support.v7.app.ActionBar.TabListener {
